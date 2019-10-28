@@ -1,6 +1,6 @@
-# werewolf_kill_judge
+# Werewolf Killing - Judge
 
-A new Flutter project.
+A Flutter project on Judging people's status in the game ```Werewolf Killing```.
 
 ## Getting Started
 
@@ -14,3 +14,12 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+
+## Key points about Flutter
+
+### Flutter App Basics
+
+- The ```Build()``` method returns the widgets(widgest tree) which should be rendered onto the screen.
+- Widgets are the core building blocks of Flutter user interfaces. 
+- The role of ```runApp()``` is to build the main widget and calls ```build()``` on it.
