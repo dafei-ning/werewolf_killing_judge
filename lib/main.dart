@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/semantics.dart';
+import './question.dart';
 
 // void main() {
 //   runApp(MyApp());
@@ -27,12 +27,20 @@ class _MyAppState extends State<MyApp> {
     var questions = ['场上是否单边预言家？', '是否有明确站边？'];
     return MaterialApp(
       home: Scaffold(
+          /*
+           * Top bar 
+           */
           appBar: AppBar(
             title: Text('角色行为判定'),
           ),
+          /*
+           * Body  
+           */
           body: Column(
             children: <Widget>[
-              Text(questions[_questionIndex]),
+              Question(
+                questions[_questionIndex],
+              ),
               RaisedButton(
                 child: Text('是'),
                 onPressed: _answerQuestion,
@@ -43,7 +51,7 @@ class _MyAppState extends State<MyApp> {
               ),
               RaisedButton(
                 child: Text('不确定'),
-                onPressed: answerQuestion,
+                onPressed: _answerQuestion,
               ),
             ],
           )),
