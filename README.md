@@ -31,3 +31,8 @@ samples, guidance on mobile development, and a full API reference.
   - ```invisible widgets```包括 Row(), Column(), ListView()...
 - Widgets are normal Dart classes / objects, only usable as Widgets if you extend ```StatelessWidget``` or ```StatefulWidget``` and add a ```build()``` method.
 - Most Widgets have some (named) arguments that require another Widget - e.g. the "children" argument on the ```Column()``` constructor. Or "child" on ```Container()```.
+
+### Stateful & Stateless Widgets
+
+- StatelessWidget can't re-run ```build()``` when its properties change, while StatefulWidget can.
+- ```setState()``` is a "trigger" that informs Flutter that it needs to re-run build() of the Widget.

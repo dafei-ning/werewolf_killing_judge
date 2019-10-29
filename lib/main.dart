@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/semantics.dart';
 
 // void main() {
 //   runApp(MyApp());
@@ -6,10 +7,20 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return MyAppState();
+  }
 
+}
+
+class MyAppState extends State<MyApp> {
+  var questionIndex = 0;
   void answerQuestion() {
-    
+    setState(() {
+      questionIndex++;
+    });
   }
 
   // The Build() method returns the widgets(widgest tree) which should be rendered onto the screen.
@@ -22,13 +33,17 @@ class MyApp extends StatelessWidget {
           ),
           body: Column(
             children: <Widget>[
-              Text('The question!'),
+              Text(questions[questionIndex]),
               RaisedButton(
                 child: Text('是'),
                 onPressed: answerQuestion,
               ),
               RaisedButton(
                 child: Text('否'),
+                onPressed: () => print('选择了\'否\''),
+              ),
+              RaisedButton(
+                child: Text('不确定'),
                 onPressed: answerQuestion,
               ),
             ],
