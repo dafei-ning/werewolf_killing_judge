@@ -16,10 +16,18 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 
 
-## Key points about Flutter
+## Flutter Key Points
 
 ### Flutter App Basics
 
 - The ```Build()``` method returns the widgets(widgest tree) which should be rendered onto the screen.
 - Widgets are the core building blocks of Flutter user interfaces. 
 - The role of ```runApp()``` is to build the main widget and calls ```build()``` on it.
+
+### Widgets
+
+- Widgets分```visible widgets```和```invisible widgets```. 
+  - ```visible widgets```包括 RaiseButton(), Text(), Card()...
+  - ```invisible widgets```包括 Row(), Column(), ListView()...
+- Widgets are normal Dart classes / objects, only usable as Widgets if you extend ```StatelessWidget``` or ```StatefulWidget``` and add a ```build()``` method.
+- Most Widgets have some (named) arguments that require another Widget - e.g. the "children" argument on the ```Column()``` constructor. Or "child" on ```Container()```.
