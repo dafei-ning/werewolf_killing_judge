@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Question extends StatelessWidget {
-  String questionText;
+  // Final means it never changes when initialized.
+  final String questionText;
 
   // Constructor
   Question(this.questionText);

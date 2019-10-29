@@ -38,9 +38,7 @@ class _MyAppState extends State<MyApp> {
            */
           body: Column(
             children: <Widget>[
-              Question(
-                questions[_questionIndex],
-              ),
+              Question(questions[_questionIndex]),
               RaisedButton(
                 child: Text('是'),
                 onPressed: _answerQuestion,
