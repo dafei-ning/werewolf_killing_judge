@@ -8,7 +8,7 @@ class Answer extends StatelessWidget {
   /*
    * Constructor
    */
-  Answer(this.selectHandler, String answerText);
+  Answer(this.selectHandler, this.answerText);
 
   @override
   Widget build(BuildContext context) {

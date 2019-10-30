@@ -19,7 +19,7 @@ class Question extends StatelessWidget {
       ),
       width: double.infinity,
       height: 50,
-      margin: EdgeInsets.all(25),
+      margin: EdgeInsets.all(30),
     );
   }
 }

@@ -28,15 +28,15 @@ class _MyAppState extends State<MyApp> {
     var questions = [
       {
         'questionText': '该角色是否站边正确预言家？',
-        'answers': ['Yes', 'No', '不明确站边'],
+        'answers': ['站边正确', '对立站边', '不明确站边'],
       },
       {
         'questionText': '该角色是否攻击相同站边的角色？',
-        'answers': ['Yes', 'No', '还不确定'],
+        'answers': ['攻击了正确站边的人', '没有攻击', '还不确定'],
       },
       {
-        'questionText': '该角色是否有帮助狼人阵营动作？',
-        'answers': ['Yes', 'No', '还不确定'],
+        'questionText': '该角色是否有攻击过明确是狼人阵营动作？',
+        'answers': ['有攻击狼人阵营的人', '回避狼人阵营的人', '还不确定'],
       }
     ];
     return MaterialApp(
@@ -53,15 +53,10 @@ class _MyAppState extends State<MyApp> {
           body: Column(
             children: <Widget>[
               Question(questions[_questionIndex]['questionText']),
-
-              (questions[_questionIndex]['answers'] as List<String>).map({
-                return Answer(answer);
-
-              })
-
-              Answer(_answerQuestion),
-              Answer(_answerQuestion),
-              Answer(_answerQuestion),
+              ...(questions[_questionIndex]['answers'] as List<String>)
+                  .map((answer) {
+                return Answer(_answerQuestion, answer);
+              }).toList()
             ],
           )),
     );
