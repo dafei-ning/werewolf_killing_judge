@@ -4,7 +4,9 @@ class Question extends StatelessWidget {
   // Final means it never changes when initialized.
   final String questionText;
 
-  // Constructor
+  /*
+   * Constructor
+   */
   Question(this.questionText);
 
   @override
