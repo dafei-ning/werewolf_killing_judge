@@ -25,7 +25,20 @@ class _MyAppState extends State<MyApp> {
 
   // The Build() method returns the widgets(widgest tree) which should be rendered onto the screen.
   Widget build(BuildContext context) {
-    var questions = ['场上是否单边预言家？', '是否有明确站边？'];
+    var questions = [
+      {
+        'questionText': '该角色是否站边正确预言家？',
+        'answers': ['Yes', 'No', '不明确站边'],
+      },
+      {
+        'questionText': '该角色是否攻击相同站边的角色？',
+        'answers': ['Yes', 'No', '还不确定'],
+      },
+      {
+        'questionText': '该角色是否有帮助狼人阵营动作？',
+        'answers': ['Yes', 'No', '还不确定'],
+      }
+    ];
     return MaterialApp(
       home: Scaffold(
           /*
@@ -39,7 +52,13 @@ class _MyAppState extends State<MyApp> {
            */
           body: Column(
             children: <Widget>[
-              Question(questions[_questionIndex]),
+              Question(questions[_questionIndex]['questionText']),
+
+              (questions[_questionIndex]['answers'] as List<String>).map({
+                return Answer(answer);
+
+              })
+
               Answer(_answerQuestion),
               Answer(_answerQuestion),
               Answer(_answerQuestion),
