@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './quiz.dart';
+import './result.dart';
 
 // void main() {
 //   runApp(MyApp());
@@ -16,7 +17,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   // TODO: the questions and answers should be put into widgets.
-  final questions = const [
+  final _questions = const [
     {
       'questionText': '该角色是否站边正确预言家？',
       'answers': ['站边正确', '对立站边', '不明确站边'],
@@ -35,7 +36,7 @@ class _MyAppState extends State<MyApp> {
     setState(() {
       _questionIndex++;
     });
-    if (_questionIndex < questions.length) {
+    if (_questionIndex < _questions.length) {
       print('还有问题没有回答');
     } else {
       print('No more questions!');
@@ -55,8 +56,13 @@ class _MyAppState extends State<MyApp> {
           /*
            * Body  
            */
-          body: _questionIndex < questions.length
-              ? Quiz(questions, _answerQuestion) : Center(child: Text('该角色身份确定'))),
+          body: _questionIndex < _questions.length
+              ? Quiz(
+                  questions: _questions,
+                  answerHandler: _answerQuestion,
+                  questionIndex: _questionIndex,
+                )
+              : Result()),
     );
   }
 }

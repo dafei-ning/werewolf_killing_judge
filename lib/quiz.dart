@@ -1,28 +1,31 @@
 /*
  * The quiz includes questions and answers.
- */ 
+ */
 
 import 'package:flutter/material.dart';
 import './question.dart';
 import './answer.dart';
 
 class Quiz extends StatelessWidget {
-
-  final String questions;
+  final List<Map<String, Object>> questions;
   final Function answerHandler;
+  final int questionIndex;
 
+  // () and ({}) ?
+  Quiz({
+    @required this.questions,
+    @required this.answerHandler,
+    @required this.questionIndex,
+  });
 
-  Quiz(this.questions, this.answerHandler);
-  
-  
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Question(questions[_questionIndex]['questionText']),
+        Question(questions[questionIndex]['questionText']),
         // Answers mapped to buttons
-        ...(questions[_questionIndex]['answers'] as List<String>).map((answer) {
-          return Answer(_answerQuestion, answer);
+        ...(questions[questionIndex]['answers'] as List<String>).map((answer) {
+          return Answer(answerHandler, answer);
         }).toList()
       ],
     );
