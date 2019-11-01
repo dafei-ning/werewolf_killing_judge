@@ -56,28 +56,34 @@ class _MyAppState extends State<MyApp> {
     } else {
       print('No more questions!');
     }
+
+    void _resetQuiz() {
+      _questionIndex = 0;
+      _totalScore = 0;
+    }
   }
 
   // The Build() method returns the widgets(widgest tree) which should be rendered onto the screen.
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-          /*
+        /*
            * Top bar 
            */
-          appBar: AppBar(
-            title: Text('角色行为判定'),
-          ),
-          /*
+        appBar: AppBar(
+          title: Text('角色行为判定'),
+        ),
+        /*
            * Body  
            */
-          body: _questionIndex < _questions.length
-              ? Quiz(
-                  questions: _questions,
-                  answerHandler: _answerQuestion,
-                  questionIndex: _questionIndex,
-                )
-              : Result(_totalScore)),
+        body: _questionIndex < _questions.length
+            ? Quiz(
+                questions: _questions,
+                answerHandler: _answerQuestion,
+                questionIndex: _questionIndex,
+              )
+            : Result(_totalScore, _resetQuiz),
+      ),
     );
   }
 }

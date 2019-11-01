@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 
 class Result extends StatelessWidget {
   final int resultScore;
+  final Function resetScore;
 
   /*
    * Constructor
    */
-  Result(this.resultScore);
+  Result(this.resultScore, this.resetScore);
 
   String get resultPhrase {
     String resultText = '该角色身份不能确定';
@@ -20,23 +21,26 @@ class Result extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        Center(
-          child: Text(
+    return Center(
+      child: Column(
+        children: <Widget>[
+          Text(
             '该角色身份判断结果',
             style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400),
             textAlign: TextAlign.center,
           ),
-        ),
-        Center(
-          child: Text(
+          Text(
             resultPhrase,
             style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
           ),
-        ),
-      ],
+          // Press flatbutton to reset totalScore and questionIndex.
+          FlatButton(
+            child: Text('返回'),
+            onPressed: resetScore,
+          ),
+        ],
+      ),
     );
   }
 }
