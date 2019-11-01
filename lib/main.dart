@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import './question.dart';
-import './answer.dart';
+import './quiz.dart';
 
 // void main() {
 //   runApp(MyApp());
@@ -16,6 +15,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  // TODO: the questions and answers should be put into widgets.
   final questions = const [
     {
       'questionText': '该角色是否站边正确预言家？',
@@ -55,17 +55,8 @@ class _MyAppState extends State<MyApp> {
           /*
            * Body  
            */
-          body: _questionIndex < questions.length? Column(
-            children: <Widget>[
-              Question(questions[_questionIndex]['questionText']),
-              // Answers mapped to buttons
-              ...(questions[_questionIndex]['answers'] as List<String>)
-                  .map((answer) {
-                return Answer(_answerQuestion, answer);
-              }).toList()
-            ],
-          ) : Center(child: Text('该角色身份确定'))
-        ),
+          body: _questionIndex < questions.length
+              ? Quiz(questions, _answerQuestion) : Center(child: Text('该角色身份确定'))),
     );
   }
 }
