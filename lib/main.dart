@@ -56,11 +56,13 @@ class _MyAppState extends State<MyApp> {
     } else {
       print('No more questions!');
     }
+  }
 
-    void _resetQuiz() {
+  void _resetQuiz() {
+    setState(() {
       _questionIndex = 0;
       _totalScore = 0;
-    }
+    });
   }
 
   // The Build() method returns the widgets(widgest tree) which should be rendered onto the screen.
