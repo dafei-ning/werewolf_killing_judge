@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import './quiz.dart';
 import './result.dart';
-import 'questionsPool.dart';
 
 // void main() {
 //   runApp(MyApp());
@@ -22,25 +21,25 @@ class _MyAppState extends State<MyApp> {
     {
       'questionText': '该角色是否站边正确预言家？',
       'answers': [
-        {'text': '站边正确', '好人值': '12'},
-        {'text': '对立站边', '好人值': '2'},
-        {'text': '不明确站边', '好人值': '20'}
+        {'text': '站边正确', '好人值': 12},
+        {'text': '对立站边', '好人值': 2},
+        {'text': '不明确站边', '好人值': 20}
       ]
     },
     {
       'questionText': '该角色是否攻击相同站边的角色？',
       'answers': [
-        {'text': '攻击了正确站边的人', '好人值': '5'},
-        {'text': '没有攻击', '好人值': '15'},
-        {'text': '还不确定', '好人值': '10'}
+        {'text': '攻击了正确站边的人', '好人值': 5},
+        {'text': '没有攻击', '好人值': 15},
+        {'text': '还不确定', '好人值': 10}
       ]
     },
     {
       'questionText': '该角色是否有攻击过明确是狼人阵营动作？',
       'answers': [
-        {'text': '有攻击狼人阵营的人', '好人值': '20'},
-        {'text': '回避狼人阵营的人', '好人值': '1'},
-        {'text': '还不确定', '好人值': '5'}
+        {'text': '有攻击狼人阵营的人', '好人值': 20},
+        {'text': '回避狼人阵营的人', '好人值': 1},
+        {'text': '还不确定', '好人值': 5}
       ]
     }
   ];
