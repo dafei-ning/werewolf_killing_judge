@@ -11,6 +11,9 @@ class Quiz extends StatelessWidget {
   final Function answerHandler;
   final int questionIndex;
 
+  /*
+   * Constructor
+   */
   // () and ({}) ?
   Quiz({
     @required this.questions,

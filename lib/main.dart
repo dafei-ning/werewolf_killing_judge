@@ -21,9 +21,9 @@ class _MyAppState extends State<MyApp> {
     {
       'questionText': '该角色是否站边正确预言家？',
       'answers': [
-        {'text': '站边正确', '好人值': 12},
+        {'text': '站边正确', '好人值': 14},
         {'text': '对立站边', '好人值': 2},
-        {'text': '不明确站边', '好人值': 20}
+        {'text': '不明确站边', '好人值': 18}
       ]
     },
     {
@@ -77,7 +77,7 @@ class _MyAppState extends State<MyApp> {
                   answerHandler: _answerQuestion,
                   questionIndex: _questionIndex,
                 )
-              : Result()),
+              : Result(_totalScore)),
     );
   }
 }
