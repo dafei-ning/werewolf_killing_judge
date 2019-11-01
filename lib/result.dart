@@ -37,7 +37,12 @@ class Result extends StatelessWidget {
           // Press flatbutton to reset totalScore and questionIndex.
           FlatButton(
             child: Text('返回'),
+            colorBrightness: Brightness.dark,
+            highlightColor: Colors.blueGrey[200],
             onPressed: resetScore,
+            color: Colors.blueGrey[500],
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
           ),
         ],
       ),
