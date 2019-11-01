@@ -12,7 +12,7 @@ class Result extends StatelessWidget {
     String resultText = '该角色身份不能确定。';
     if (resultScore <= 10) {
       resultText = '该角色极有可能是狼人。';
-    } else if (resultScore >= 50) {
+    } else if (resultScore >= 45) {
       resultText = '该角色应该是好人。';
     }
     return resultText;
@@ -28,7 +28,7 @@ class Result extends StatelessWidget {
         ),
         Text(
           resultPhrase,
-          style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
         ),
       ],
     );
