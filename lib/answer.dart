@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 
 class Answer extends StatelessWidget {
   // The pointer selectHandler must have a function.
-  final Function selectHandler;
+  final Function functionRunOnPressed;
   final String answerText;
 
   /*
    * Constructor
    */
-  Answer(this.selectHandler, this.answerText);
+  Answer(this.functionRunOnPressed, this.answerText);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class Answer extends StatelessWidget {
         child: Text(answerText),
         color: Colors.blueGrey[100],
         textColor: Colors.white,
-        onPressed: selectHandler,
+        onPressed: functionRunOnPressed,
       ),
     );
   }

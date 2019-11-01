@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './quiz.dart';
 import './result.dart';
+import 'questionsPool.dart';
 
 // void main() {
 //   runApp(MyApp());
@@ -20,19 +21,34 @@ class _MyAppState extends State<MyApp> {
   final _questions = const [
     {
       'questionText': '该角色是否站边正确预言家？',
-      'answers': ['站边正确', '对立站边', '不明确站边'],
+      'answers': [
+        {'text': '站边正确', '好人值': '12'},
+        {'text': '对立站边', '好人值': '2'},
+        {'text': '不明确站边', '好人值': '20'}
+      ]
     },
     {
       'questionText': '该角色是否攻击相同站边的角色？',
-      'answers': ['攻击了正确站边的人', '没有攻击', '还不确定'],
+      'answers': [
+        {'text': '攻击了正确站边的人', '好人值': '5'},
+        {'text': '没有攻击', '好人值': '15'},
+        {'text': '还不确定', '好人值': '10'}
+      ]
     },
     {
       'questionText': '该角色是否有攻击过明确是狼人阵营动作？',
-      'answers': ['有攻击狼人阵营的人', '回避狼人阵营的人', '还不确定'],
+      'answers': [
+        {'text': '有攻击狼人阵营的人', '好人值': '20'},
+        {'text': '回避狼人阵营的人', '好人值': '1'},
+        {'text': '还不确定', '好人值': '5'}
+      ]
     }
   ];
   var _questionIndex = 0;
-  void _answerQuestion() {
+  var _totalScore = 0;
+
+  void _answerQuestion(int score) {
+    _totalScore += score;
     setState(() {
       _questionIndex++;
     });
