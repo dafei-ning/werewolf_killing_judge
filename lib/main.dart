@@ -35,7 +35,11 @@ class _MyAppState extends State<MyApp> {
     setState(() {
       _questionIndex++;
     });
-    if (_questionIndex == questions.length) {}
+    if (_questionIndex < questions.length) {
+      print('还有问题没有回答');
+    } else {
+      print('No more questions!');
+    }
   }
 
   // The Build() method returns the widgets(widgest tree) which should be rendered onto the screen.
@@ -51,7 +55,7 @@ class _MyAppState extends State<MyApp> {
           /*
            * Body  
            */
-          body: Column(
+          body: _questionIndex < questions.length? Column(
             children: <Widget>[
               Question(questions[_questionIndex]['questionText']),
               // Answers mapped to buttons
@@ -60,7 +64,8 @@ class _MyAppState extends State<MyApp> {
                 return Answer(_answerQuestion, answer);
               }).toList()
             ],
-          )),
+          ) : Center(child: Text('该角色身份确定'))
+        ),
     );
   }
 }
