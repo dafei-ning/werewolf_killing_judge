@@ -23,6 +23,7 @@ class Result extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(
             '该角色身份判断结果',
@@ -40,6 +41,7 @@ class Result extends StatelessWidget {
             colorBrightness: Brightness.dark,
             highlightColor: Colors.blueGrey[200],
             onPressed: resetScore,
+            splashColor: Colors.grey,
             color: Colors.blueGrey[500],
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
